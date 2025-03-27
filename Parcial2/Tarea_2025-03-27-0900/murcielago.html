@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Cadena</h2>
+    <p>Instrucciones: Dada la cadena "murciélago", obtener el número de vocales, el de consonantes <br>
+        e imprimirla en idioma de la EFE "mufurcifiefelafagofo"</p>
+    <script>
+        function Letras(cadena) {
+            let vocales = "aeiou";
+            let numV = 0;
+            let numC = 0;
+            let EFE = "";
+            let i;
+            for (i = 0; i < cadena.length; i++) {
+                let letra = cadena[i].toLowerCase();
+                
+                if (vocales.includes(letra)) {
+                    numV++;
+                    EFE += letra + "f" + letra;
+                } else {
+                    numC++;
+                    EFE += letra;
+                }
+            }
+            
+            document.write ("<strong>El total de vocales es:</strong> " + numV + "<br>" + 
+                "<strong> El total de consolantes es:</strong> " + numC + "<br>" +
+                "<strong>La cadena en el idioma de la EFE es:</strong> " + EFE + "<br>");
+        }
+        
+        Letras("murcielago");
+    </script>
+</body>
+</html>
