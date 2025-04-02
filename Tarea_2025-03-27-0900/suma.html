@@ -1,0 +1,36 @@
+<html>
+<head>
+    <script>
+        function bntCalcular_click(){
+            let op1 = document.getElementById ("op1");
+            let op2 = document.getElementById ("op2");
+            let res = document.getElementById ("res");
+
+            let op1n = parseInt (op1.value);
+            let op2n = parseInt (op2.value);
+            res.value = op1n + op2n;
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>op1</td>
+        <td>&nbsp;</td>
+        <td>op2</td>
+        <td>&nbsp;</td>
+        <td>res</td>
+    </tr>
+    <tr>
+        <td><input id="op1"></td>
+        <td>+</td>
+        <td><input id="op2"></td>
+        <td>=</td>
+        <td><input id="res" readonly></td> <!-- el objeto solo recibe lectura, es decir, no puedes escribir en el-->
+    </tr>
+    <tr>
+        <td colspan=5><button onclick="bntCalcular_click()">Calcular</button></td>
+    </tr>
+</table>
+</body>
+</html>
