@@ -28,12 +28,12 @@
 
 
         function Mediana(numeros) {
-            let mitad = Math.floor(numeros.length / 2);
+            let mitad = (numeros.length / 2);
             return (numeros[mitad - 1] + numeros[mitad]) / 2;
         }
 
         function Moda(numeros) {
-            let frecuencia = {};
+            let frecuencia = [];
             let maxFrecuencia = 0;
             let modas = [];
             let num;
