@@ -1,0 +1,68 @@
+<!--Construir una calculadora aritmética-->
+<html>
+    <head>
+        <style>
+            body{
+               text-align: center;
+            }
+            #display {
+                width: 228px;
+                height: 50px;
+                font-size: 20px;
+                margin-bottom: 5px;
+                text-align: right;
+            }
+
+            button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                margin: 2px;
+                background-color: skyblue;
+            }
+            #buttonigual{ 
+                width: 225px; 
+                height: 50px; 
+                font-size: 20px;
+            }
+        </style>
+        <script>
+            function btn_Click (val) {
+                var display = document.getElementById("display");
+                if (val == "=") {
+                    display.value = eval(display.value);
+                } else {
+                    display.value += val;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Calculadora</h2>
+        <input type="text" id="display" readonly></input>
+
+        <br>
+
+        <button onclick="btn_Click('7')">7</button>
+        <button onclick="btn_Click('8')">8</button>
+        <button onclick="btn_Click('9')">9</button>
+        <button onclick="btn_Click('/')">/</button>
+        <br>
+        <button onclick="btn_Click('4')">4</button>
+        <button onclick="btn_Click('5')">5</button>
+        <button onclick="btn_Click('6')">6</button>
+        <button onclick="btn_Click('*')">*</button>
+        <br>
+        <button onclick="btn_Click('1')">1</button>
+        <button onclick="btn_Click('2')">2</button>
+        <button onclick="btn_Click('3')">3</button>
+        <button onclick="btn_Click('-')">-</button>
+        <br>
+        <button onclick="btn_Click('0')">0</button>
+        <button onclick="btn_Click('.')">.</button>
+        <button onclick="document.getElementById('display').value = ''">C</button>
+        <button onclick="btn_Click('+')">+</button>
+        <br>
+        <button id="buttonigual" onclick="btn_Click('=')">=</button>     
+    </body>
+</html>

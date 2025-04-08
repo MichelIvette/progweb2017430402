@@ -1,0 +1,92 @@
+<!--Con cada presión en el teclado debe cambiar el color del fondo del div
+Se usan dos escuchadores del teclado:
+*keydown es para cambiar el color del div
+*keyup es para regresar al color original del div-->
+
+<html >
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #divW, #divA, #divS, 
+        #divD, #divZ, #divX{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            border-radius: 20px;
+            font-size: 60px;
+            background-color: rgb(219, 233, 220);
+        }
+        #div1{
+            display: flex;
+            justify-content: center;
+            margin: 8px;
+        }
+        #div2, #div3{
+            display: flex;
+            justify-content: center;
+            margin: 8px;
+            gap: 8px;
+        }
+</style>
+    <script>
+        const coloresPresionados = {
+            'w': 'yellow',
+            'a': 'skyblue',
+            's': 'limegreen',
+            'd': 'magenta',
+            'z': 'cyan',
+            'x': 'pink'
+        };
+
+        const coloresOriginales = {
+            'w': 'rgb(219, 233, 220)',
+            'a': 'rgb(219, 233, 220)',
+            's': 'rgb(219, 233, 220)',
+            'd': 'rgb(219, 233, 220)',
+            'z': 'rgb(219, 233, 220)',
+            'x': 'rgb(219, 233, 220)'
+        };
+
+        function agregarListeners() {
+            document.addEventListener('keydown', function(event) {
+                const tecla = event.key.toLowerCase(); //se coloca toLowerCase() para conviertir la tecla presionada en minúscula. 
+                const idDiv = 'div' + tecla.toUpperCase(); //tecla.toUpperCase() convierte una letra minúscula a mayúscula.
+                const div = document.getElementById(idDiv);
+                if (div && coloresPresionados[tecla]) {
+                    div.style.backgroundColor = coloresPresionados[tecla];
+                }
+            });
+
+            document.addEventListener('keyup', function(event) {
+                const tecla = event.key.toLowerCase();
+                const idDiv = 'div' + tecla.toUpperCase();
+                const div = document.getElementById(idDiv);
+                if (div && coloresOriginales[tecla]) {
+                    div.style.backgroundColor = coloresOriginales[tecla];
+                }
+            });
+        }
+    </script>
+</head>
+<body onload="agregarListeners()">
+    <h1>Divs que cambian de color</h1>
+    <div id="div1">
+        <div id="divW">W</div>
+    </div>
+    <div id="div2">
+        <div id="divA">A</div>
+        <div id="divS">S</div>
+        <div id="divD">D</div>
+    </div>
+    <div id="div3">
+        <div id="divZ">Z</div>
+        <div id="divX">X</div>
+    </div>
+</body>
+</html>
